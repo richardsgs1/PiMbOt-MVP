@@ -9,6 +9,6 @@
       ]
     }
   },
-  "postCreateCommand": "corepack enable && pnpm install",
+  "postCreateCommand": "corepack enable && pnpm install && pnpm add -D tailwindcss postcss autoprefixer && pnpm exec tailwindcss init -p",
   "features": {}
 }
