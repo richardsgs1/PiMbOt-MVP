@@ -1,14 +1,14 @@
 {
-  "name": "PiMbOt-MVP Dev",
+  "name": "PiMbOt Dev Container",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
-  "postCreateCommand": "npm install -g npm@9.8.1 && corepack disable && npm install",
   "customizations": {
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "dbaeumer.vscode-eslint"
       ]
     }
-  }
+  },
+  "postCreateCommand": "corepack enable && pnpm install",
+  "features": {}
 }
