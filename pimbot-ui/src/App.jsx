@@ -1,35 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Box bg="gray.50" minH="100vh" p={8}>
+      <VStack spacing={6} align="center">
+        <Heading as="h1" size="xl" color="blue.500">
+          Welcome to PiMbOt
+        </Heading>
+        <Text fontSize="lg" textAlign="center" maxW="600px">
+          Your AI-powered project management guide.  
+          Whether you're a novice or a seasoned pro, PiMbOt is here to  
+          help you plan, execute, and succeed.
+        </Text>
+      </VStack>
+    </Box>
   )
 }
-
-export default App

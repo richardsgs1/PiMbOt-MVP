@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Button, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 
 export default function App() {
   return (
@@ -12,9 +12,6 @@ export default function App() {
           Whether you're a novice or a seasoned pro, PiMbOt is here to  
           help you plan, execute, and succeed.
         </Text>
-        <Button colorScheme="blue" size="lg">
-          Get Started
-        </Button>
       </VStack>
     </Box>
   )
