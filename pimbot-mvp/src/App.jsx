@@ -1,24 +1,36 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Onboarding from "./pages/Onboarding";
-import Chat from "./pages/Chat";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Box, Flex, Button, Heading } from "@chakra-ui/react";
+
+// Simple placeholder pages
+const HomePage = () => <Heading>Welcome to PiMbOt</Heading>;
+const OnboardingPage = () => <Heading>Onboarding Assistant</Heading>;
+const ChatPage = () => <Heading>Chat with PiMbOt</Heading>;
 
 export default function App() {
   return (
-    <Router>
-      <nav style={{ padding: "1rem", background: "#007bff" }}>
-        <Link to="/" style={{ color: "#fff", marginRight: "1rem" }}>Home</Link>
-        <Link to="/onboarding" style={{ color: "#fff", marginRight: "1rem" }}>Onboarding</Link>
-        <Link to="/chat" style={{ color: "#fff" }}>Chat</Link>
-      </nav>
+    <Box>
+      {/* Navigation */}
+      <Flex as="nav" bg="blue.500" color="white" p={4} gap={4}>
+        <Button as={Link} to="/" colorScheme="teal" variant="solid">
+          Home
+        </Button>
+        <Button as={Link} to="/onboarding" colorScheme="teal" variant="solid">
+          Onboarding
+        </Button>
+        <Button as={Link} to="/chat" colorScheme="teal" variant="solid">
+          Chat
+        </Button>
+      </Flex>
 
-      <div style={{ padding: "1rem" }}>
+      {/* Page Content */}
+      <Box p={4}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/chat" element={<ChatPage />} />
         </Routes>
-      </div>
-    </Router>
+      </Box>
+    </Box>
   );
 }
