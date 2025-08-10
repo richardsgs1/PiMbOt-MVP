@@ -1,18 +1,29 @@
-import { Box, Heading, Text, VStack } from '@chakra-ui/react'
+import { Link, Routes, Route } from 'react-router-dom'
+import { Box, Flex, Heading, Spacer, Button } from '@chakra-ui/react'
+import Home from './pages/Home'
+import Onboarding from './pages/Onboarding'
+import Chat from './pages/Chat'
 
 export default function App() {
   return (
-    <Box bg="gray.50" minH="100vh" p={8}>
-      <VStack spacing={6} align="center">
-        <Heading as="h1" size="xl" color="blue.500">
-          Welcome to PiMbOt
-        </Heading>
-        <Text fontSize="lg" textAlign="center" maxW="600px">
-          Your AI-powered project management guide.  
-          Whether you're a novice or a seasoned pro, PiMbOt is here to  
-          help you plan, execute, and succeed.
-        </Text>
-      </VStack>
+    <Box>
+      {/* Navigation Bar */}
+      <Flex bg="blue.600" color="white" p={4} align="center">
+        <Heading size="md">PiMbOt</Heading>
+        <Spacer />
+        <Link to="/"><Button colorScheme="blue" variant="ghost">Home</Button></Link>
+        <Link to="/onboarding"><Button colorScheme="blue" variant="ghost">Onboarding</Button></Link>
+        <Link to="/chat"><Button colorScheme="blue" variant="ghost">Chat</Button></Link>
+      </Flex>
+
+      {/* Page Routes */}
+      <Box p={6}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      </Box>
     </Box>
   )
 }
